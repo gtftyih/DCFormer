@@ -31,9 +31,6 @@ You can download our pre-trained models from [Google Drive]() or [Baidu Disk]() 
 ### Human3.6M
 To evaluate our DCFormer model on the 2D keypoints obtained by CPN, please run:
 ```bash
-python run_dc_agg.py -f 27 -b 128  --train 0 --layers 6 -s 1 -k 'cpn_ft_h36m_dbb' --reload 1 --previous_dir_scale ./checkpoint/model_27_DCFormer/agg_scale_5_4244.pth --previous_dir_depth ./checkpoint/model_27_DCFormer/agg_depth_5_4244.pth --previous_dir_agg ./checkpoint/model_27_DCFormer/agg_5_4244.pth
-```
-```bash
 python run_dc_agg.py -f 243 -b 128  --train 0 --layers 6 -s 1 -k 'cpn_ft_h36m_dbb' --reload 1 --previous_dir_scale ./checkpoint/model_243_DCFormer/agg_scale_1_4030.pth --previous_dir_depth ./checkpoint/model_243_DCFormer/agg_depth_1_4030.pth --previous_dir_agg ./checkpoint/model_243_DCFormer/agg_1_4030.pth
 ```
 Different models use different configurations as follows.
