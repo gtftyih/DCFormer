@@ -37,15 +37,19 @@ Different models use different configurations as follows.
 
 If you want to evaluate traditional method STAF^2ormer, please run:
 ```bash
-python run_staf.py -f 27 -b 128 --train 0 --layers 6 -s 1 -k 'cpn_ft_h36m_dbb' --reload 1 --previous_dir ./checkpoint/model_27_DCFormer/staf_6_4385.pth
+python run_staf.py -f 243 -b 128 --train 0 --layers 6 -s 1 -k 'cpn_ft_h36m_dbb' --reload 1 --previous_dir ./checkpoint/model_243_DCFormer/staf_11_4082.pth
 ```
 ### MPI-INF-3DHP
 The pre-trained models and codes for DCFormer are currently undergoing updates. In the meantime, you can run this code to observe the results for 81 frames.
 
 ```bash
  python run_3dhp_dc_agg.py -f 81 -b 128  --train 0 --layers 6 -s 1 --previous_dir_scale ./checkpoint/model_81_DCFormer/3dhp_agg_scale_4_2132.pth --previous_dir_depth ./checkpoint/model_81_DCFormer/3dhp_agg_depth_4_2132.pth --reload 1 --previous_dir_agg ./checkpoint/model_81_DCFormer/3dhp_agg_4_2132.pth
+
+## Training from scratch
+
+
 ```
-### In the Wild Video
+## Visulization
 Accroding MHFormer, make sure to download the YOLOv3 and HRNet pretrained models [here](https://drive.google.com/drive/folders/1_ENAMOsPM7FXmdYRbkwbFHgzQq_B_NQA) and put it in the './demo/lib/checkpoint' directory firstly. Then, you need to put your in-the-wild videos in the './demo/video' directory.
 
 You can modify the 'get_pose3D' function in the 'vis_dc.py' or 'vis.py' script according to your needs, including the checkpoint and model parameters, and then execute the following command:
