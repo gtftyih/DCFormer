@@ -146,8 +146,8 @@ def get_pose3D(video_path, output_dir):
 
     ## Reload 
     model = Model(args).cuda()
-    model_pre = Model_scale_c(args,2,pre_dict_pre['regress_head.weight'].shape[0]).cuda()
-    model_trans = Model_depth_c(args,2,pre_dict['regress_head.weight'].shape[0]).cuda()
+    model_pre = Model_scale_c(args,2,pre_dict_pre['module.regress_head.weight'].shape[0]).cuda()
+    model_trans = Model_depth_c(args,2,pre_dict['module.regress_head.weight'].shape[0]).cuda()
     model_agg = Model_agg(args, out_features=3).cuda()
 
     model_dict_pre = model_pre.state_dict()
