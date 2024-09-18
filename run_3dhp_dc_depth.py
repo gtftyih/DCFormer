@@ -14,7 +14,7 @@ from common.camera import get_uvd2xyz
 from common.load_data_3dhp_mae import Fusion
 from common.h36m_dataset import Human36mDataset
 from model.block.refine import refine
-from model.DCFormer_Depth import Model as Model_c
+from model.DCFormer_Depth import Model as Model_dupl_c
 
 import scipy.io as scio
 
