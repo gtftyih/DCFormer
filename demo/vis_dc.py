@@ -145,10 +145,10 @@ def get_pose3D(video_path, output_dir):
     pre_dict_trans = torch.load(model_path_trans)
 
     ## Reload 
-    model = Model(args).cuda()
-    model_pre = Model_scale_c(args,2,pre_dict_pre['module.regress_head.weight'].shape[0]).cuda()
-    model_trans = Model_depth_c(args,2,pre_dict['module.regress_head.weight'].shape[0]).cuda()
-    model_agg = Model_agg(args, out_features=3).cuda()
+    #model = Model(args).cuda()
+    model_pre = nn.DataParallel(Model_scale_c(args,2,pre_dict_pre['module.regress_head.weight'].shape[0])).cuda()
+    model_trans = nn.DataParallel(Model_depth_c(args,2,pre_dict['module.regress_head.weight'].shape[0])).cuda()
+    model_agg = nn.DataParallel(Model_agg(args, out_features=3)).cuda()
 
     model_dict_pre = model_pre.state_dict()
     for name, key in model_dict_pre.items():
