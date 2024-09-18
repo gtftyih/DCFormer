@@ -136,7 +136,7 @@ def get_pose3D(video_path, output_dir):
     args.n_joints, args.out_joints = 17, 17
 
     ## Reload 
-    model = Model(args).cuda()
+    model = nn.DataParallel(Model(args)).cuda()
 
     model_dict = model.state_dict()
     # Put the pretrained model of MHFormer in 'checkpoint/pretrained/351'
